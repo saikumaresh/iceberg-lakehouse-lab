@@ -1,0 +1,131 @@
+{
+  "env": {
+    "pyiceberg": "0.12.0",
+    "pyarrow": "26.0.1",
+    "rows": 2000000,
+    "cpus": 2
+  },
+  "setup": {
+    "load_s": 1.28,
+    "data_files": 30,
+    "sum_amount": 99982550.81
+  },
+  "e1_undo": {
+    "mistake_s": 1.39,
+    "sum_after_mistake": 0.0,
+    "rollback_s": 0.0072,
+    "sum_after_rollback": 99982550.81,
+    "sum_original": 99982550.81,
+    "restored_ok": true,
+    "plain_lake_rewrite_s": 1.0,
+    "plain_lake_rewrite_mb": 54.0,
+    "speedup_vs_rewrite": 139.0
+  },
+  "e2_bad_run": {
+    "false_rows_added": 6000,
+    "rows_found_by_snapshot_diff": 6000,
+    "found_are_duplicates": true,
+    "find_s": 0.007,
+    "rows_now": 2006000,
+    "rows_as_of_before": 2000000,
+    "fix_rollback_s": 0.0092,
+    "rows_after_fix": 2000000
+  },
+  "e3_hidden_partitioning": {
+    "iceberg_files_planned": 1,
+    "iceberg_files_total": 30,
+    "iceberg_s": 0.02,
+    "rows": 67179,
+    "hive_files_opened_filter_on_ts": 30,
+    "hive_files_opened_filter_on_dt": 1,
+    "hive_files_total": 30,
+    "hive_s": 0.114,
+    "hive_rows": 67179
+  },
+  "e4_schema_evolution": {
+    "seconds": 0.0074,
+    "data_files_before": 30,
+    "data_files_rewritten": 0,
+    "old_rows_discount": [
+      null,
+      null,
+      null
+    ]
+  },
+  "e5_partition_evolution": {
+    "seconds": 0.011,
+    "data_files_rewritten": 0,
+    "specs": 2,
+    "partitions_after_new_data": 510
+  },
+  "e6_small_files": {
+    "batches": 300,
+    "rows_per_batch": 2000,
+    "append_loop_s": 38.8,
+    "plan_s_small": 0.461,
+    "read_s_small": 2.037,
+    "compact_s": 3.47,
+    "plan_s_compacted": 0.0074,
+    "read_s_compacted": 0.086
+  },
+  "e7_maintenance": {
+    "health_small_files": {
+      "data_files": 900,
+      "avg_file_kb": 17.1,
+      "snapshots": 300,
+      "manifests": 300,
+      "metadata_files": 901,
+      "metadata_json_files": 301,
+      "metadata_mb": 38.73,
+      "data_files_on_disk": 900,
+      "unreferenced_files": 0,
+      "data_on_disk_mb": 15.7
+    },
+    "health_after_compaction": {
+      "data_files": 3,
+      "avg_file_kb": 3001.6,
+      "snapshots": 302,
+      "manifests": 1,
+      "metadata_files": 906,
+      "metadata_json_files": 302,
+      "metadata_mb": 39.3,
+      "data_files_on_disk": 903,
+      "unreferenced_files": 0,
+      "data_on_disk_mb": 25.0
+    },
+    "health_after_expire": {
+      "data_files": 3,
+      "avg_file_kb": 3001.6,
+      "snapshots": 1,
+      "manifests": 1,
+      "metadata_files": 907,
+      "metadata_json_files": 303,
+      "metadata_mb": 39.32,
+      "data_files_on_disk": 903,
+      "unreferenced_files": 900,
+      "data_on_disk_mb": 25.0
+    },
+    "health_after_orphan_cleanup": {
+      "data_files": 3,
+      "avg_file_kb": 3001.6,
+      "snapshots": 1,
+      "manifests": 1,
+      "metadata_files": 907,
+      "metadata_json_files": 303,
+      "metadata_mb": 39.32,
+      "data_files_on_disk": 3,
+      "unreferenced_files": 0,
+      "data_on_disk_mb": 9.2
+    },
+    "expire_s": 4.146,
+    "orphan_files_deleted": 900,
+    "orphan_mb_freed": 15.7
+  },
+  "e8_metadata_retention": {
+    "default_metadata_json_files": 301,
+    "default_metadata_mb": 38.73,
+    "tuned_metadata_json_files": 11,
+    "tuned_metadata_mb": 6.37,
+    "data_mb": 15.7
+  }
+}

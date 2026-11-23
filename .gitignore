@@ -1,0 +1,5 @@
+warehouse/
+nb_warehouse/
+__pycache__/
+.ipynb_checkpoints/
+.venv/
