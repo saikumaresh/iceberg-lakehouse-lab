@@ -4,7 +4,7 @@ Eight small, reproducible experiments that show what Apache Iceberg actually doe
 
 Runs on a laptop with **PyIceberg**. No Spark, no Docker, no cloud account. One `pip install` and a local folder.
 
-Companion code for the article *The Undo Button for a Petabyte* by [Sai Kumaresh](https://medium.com/@saikumaresh).
+Companion code for the article [*The Undo Button for a Petabyte*](https://medium.com/@saikumaresh/the-undo-button-for-a-petabyte-eb522c341328) by [Sai Kumaresh](https://medium.com/@saikumaresh).
 
 ## Results
 
